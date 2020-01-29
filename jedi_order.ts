@@ -11,6 +11,15 @@ class Jedi
     evaluar(){
         this.estado.evaluar()
     }
+    //prototype <-- 
+    clonar(): Jedi
+    {
+        let j = new Jedi
+        j.cantMisiones = this.cantMisiones
+        j.nivelFuerza  = this.nivelFuerza
+        j.estado = this.estado
+        return j
+    }
 }
 
 abstract class EstadoJedi
@@ -124,6 +133,7 @@ class Expulsado extends EstadoJedi
     }
 
 }
+//singleton
 //se instancia una sola vez, se podria hacer sigleton <-- a una clase
 class Evaluador
 {
